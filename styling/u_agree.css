@@ -1,0 +1,133 @@
+/* CSS Document */
+
+#head_background
+{
+	background-image:url(../images/Capture.PNG);
+	overflow:auto;
+	height:204px;
+	width:auto;
+	background-size:100%;
+}
+
+#content_agreement
+{
+	margin-top:80px;
+	background-color:white;
+	overflow:auto;
+	clear:both;
+}
+#content_agreement h1
+{
+	font-size: 24px;
+	font-weight: bold;
+	line-height: 26px;
+	color: #000;
+	margin: 30px 0 25px;
+	vertical-align: middle;	
+}
+#content_agreement h3
+{
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 17px;
+	color: #000;
+}
+.agreement_parts
+{
+	width:auto;
+	
+	overflow:auto;
+	padding-left:41px;
+	border-bottom:rgb(204,204,204) 1.5px solid;
+}
+.sub_parts
+{
+	padding-bottom:10px;
+	border-bottom:solid 1px rgb(238, 238, 238);
+	overflow:auto;
+}
+.left_part
+{
+	color:rgb(51, 51, 51);
+	font-size:16px;
+	width:277px;
+	float:left;
+}
+
+.right_part
+{
+	float: right;
+	margin-left: 51px;
+	position: relative;
+	width: 564px;
+	font-size:13px;
+	color:rgb(153, 153, 153);
+	margin-right:41px;
+}
+
+
+.right_part ol, ul
+{
+    padding-left:0px;
+    
+}
+.right_part li
+{
+     margin-left:40px;
+     margin-bottom:10px;
+}
+.right_part ol > li > ol
+{
+    list-style-type:lower-alpha;
+}
+
+.right_part_l {
+    float: left;
+    width:236px;
+    color:black;
+}
+.right_part_r {
+    margin-left:51px;
+    float:left;
+    width:236px;
+    color:black;
+    padding-right:41px;
+}
+.right_part_l > h3 {
+    margin-bottom: 3px;
+}
+.right_part_r > h3 {
+    margin-bottom: 3px;
+}
+
+.backtotop {
+    padding-bottom: 20px;
+}
+
+#text_on_image {
+    
+    margin-left: 41px;
+    position: relative;
+    width: 933px;
+    margin-top: 0px;
+    
+    overflow:hidden;
+    width:687px;
+    padding-left:32px;
+    height:auto;
+    color:black;
+}
+#text_on_image h1 {
+    font-size:32px;
+    margin-bottom:15px;
+    
+}
+    #text_on_image p {
+        font-size: 13px;
+        line-height: 17px;
+    }
+.last_revised {
+    font-size: 12px;
+    line-height: 14px;
+    color: #999;
+}
