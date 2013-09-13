@@ -131,3 +131,11 @@
     line-height: 14px;
     color: #999;
 }
+.description{
+float: left;
+width:441px;
+}
+
+.menu-navig ul{
+list-style: none outside none;
+}

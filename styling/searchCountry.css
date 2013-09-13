@@ -1,0 +1,51 @@
+
+#title{
+margin-left:208px;
+position: static;
+top: 20px;
+font-family: fantasy;
+font-size: 12.2px;
+}
+#list{
+width:80%;
+margin-top: -10px;
+}
+
+ul.names{
+list-style-type:disc;
+}
+
+ul.names li{
+float:left;
+width:42%;
+margin-top: 10px;
+font-size:15px;
+color: #20B2AA;
+padding-right:50px;
+}
+
+/*
+body{
+	margin:0px;
+	height:100%;
+	line-height:1.2;
+	height:inherit;
+	font-size:62.5%;
+}
+
+    */
+
+#main
+{
+	margin-top:80px;
+	height:auto;
+	vertical-align:baseline;
+	margin-left:auto;
+	margin-right:auto;
+	overflow:auto;	
+	padding-right:10px;
+	padding-left:10px;
+	background-color:white;
+    clear:both;
+}
+

@@ -15,7 +15,7 @@ html{
 	margin-left:auto;
 	margin-right:auto;
 	height:inherit;
-    color: #666666;
+
 }
 /* head starts*/
 #header{
@@ -101,6 +101,7 @@ body{
 	padding-left:10px;
 	background-color:white;
     clear:both;
+	padding-top:10px;
 }
 
 #content{
@@ -116,6 +117,7 @@ body{
     line-height: 1.55;
     margin-bottom: 15px;
     text-align: inherit;
+	margin-top:0px;
 }
 
 #content li
@@ -180,7 +182,7 @@ body{
 	border-bottom-left-radius:6px;
 	border-bottom-right-radius:6px;
 	margin-bottom:40px;
-
+	padding-left: 10px;
 }
 
 
@@ -194,11 +196,12 @@ body{
 	/*margin-bottom:8px;*/
 	font-size:130%;
 	line-height:2.3;
+	color:black;
 }
 
 .signuplist{
 	margin-bottom:8px;
-
+	min-height:29px;
 }
 
 
@@ -214,6 +217,16 @@ body{
 	padding-left:110px;
 	vertical-align:baseline;
 
+}
+.error_textbox > a:hover
+{
+	text-decoration:none;
+}
+.error_textbox > a
+{
+	font-size:18px;
+	text-decoration:none;
+	cursor:text;
 }
 
 .signuptextbox
@@ -232,22 +245,34 @@ body{
 
 	width:100%;
 	display:block;
-	margin-bottom:8px;
+	margin-bottom:16px;
+}
+.error_textbox > p
+{
+	color:black;
+	font-size:110%;
+}
+.error_textbox > a
+{
+	color:inherit;
 }
 body a
 {
-			text-decoration:none;
-		color:#069;
+	text-decoration:none;
+	color:#069;
 }
 a:hover
 {
 	text-decoration:underline;
 }
-.nav-footer a
+.nav-footer span
 {
 
 		font-size:130%;
 
+}
+.nav-footer {
+    padding-top:2px;
 }
 .nav-footer span.nav-footer-span-last
 {
@@ -292,6 +317,7 @@ a:hover
 {
 	margin-top:9px;
 }
+
 #search-people
 {
 	overflow:auto;
@@ -332,6 +358,43 @@ a:hover
 	display:inline;
 }
 
+#submit_button:hover
+{
+	background: #5D8329;
+	background: -moz-linear-gradient(top, #94bd5b 0, #94bd5b 1px, #649f15 1px, #5d8329 100%);
+	background: -o-linear-gradient(top, #94bd5b 0, #94bd5b 1px, #649f15 1px, #5d8329 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #94bd5b), color-stop(5%, #94bd5b), color-stop(5%, #649f15), color-stop(100%, #5d8329));
+	background: linear-gradient(top, #94bd5b 0%,#94bd5b 1px,#649f15 1px,#5d8329 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#94BD5B', endColorstr='#5D8329',GradientType=0 );
+}
+#submit_button
+{
+	background: #69A219;
+background: -moz-linear-gradient(top, #afd47b 0, #afd47b 1px, #8bc03f 1px, #69a219 100%);
+background: -o-linear-gradient(top, #afd47b 0, #afd47b 1px, #8bc03f 1px, #69a219 100%);
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #afd47b), color-stop(5%, #afd47b), color-stop(5%, #8bc03f), color-stop(100%, #69a219));
+background: linear-gradient(top, #afd47b 0%,#afd47b 1px,#8bc03f 1px,#69a219 100%);
+filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#AFD47B', endColorstr='#69A219',GradientType=0 );
+border-color: #693;
+color: #fff !important;
+font-weight: bold;
+white-space: nowrap;
+border-width: 1px;
+border-style: solid;
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+cursor: pointer;
+font-size: 12px;
+line-height: 1.35;
+margin: 0;
+overflow: visible;
+padding: 3px 10px 2px;
+text-decoration: none !important;
+vertical-align: top;
+width: auto;
+}
+
 #directory h3
 {
 
@@ -341,10 +404,15 @@ a:hover
 	font-weight:normal;
 }
 
+#directory p
+{
+	margin-top:0px;
+}
 #directory
 {
-	margin-bottom:20px;
-
+	line-height:1.5;
+	margin: 15px 0 20px;
+	font-size:11px;
 }
 #agreement
 {
@@ -352,4 +420,9 @@ a:hover
     font-size: 110%;
     padding: 20px 0 10px;
     text-align: left;
+}
+
+#agreement strong
+{
+	font-size:14px;
 }
