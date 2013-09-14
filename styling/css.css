@@ -8,7 +8,11 @@ html{
 	/*font-size:13px;*/
 
 }
-
+input:focus
+{
+	box-shadow:0px 0px  3px 0px blue;
+	outline-color:blue;
+}
 .wrapper
 {
 	width:980px;
