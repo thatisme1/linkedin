@@ -13,12 +13,13 @@ end
 
 group :production do
 gem 'unicorn'
-gem 'pg'
+#gem 'pg'
 end
 gem  'wicked'
 gem  'omniauth-google-oauth2'
 gem 'oa-core'
 gem 'omniauth-facebook'
+gem 'rails_12factor'
 # gem 'rails', '3.2.14'
 # gem install activerecord-mysql2-adapter
 

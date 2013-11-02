@@ -13,12 +13,13 @@ end
 
 group :production do
 gem 'unicorn'
-gem 'pg'
+#gem 'pg'
 end
 gem  'wicked'
 gem  'omniauth-google-oauth2'
 gem 'oa-core'
 gem 'omniauth-facebook'
+
 # gem 'rails', '3.2.14'
 # gem install activerecord-mysql2-adapter
 
@@ -50,6 +51,6 @@ gem "cancan"
 gem "jquery-rails"
 #gem "rspec-rails", ">= 2.0.1", :group => [:development, :test]
 #gem "capybara", :group => [:development, :test]
-gem 'twitter-bootstrap-rails', :git => 'http://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'twitter-bootstrap-rails'
 
 
