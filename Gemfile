@@ -6,7 +6,15 @@ source 'https://rubygems.org'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 ruby '1.9.3'
+group :development do
+
 gem  'mysql2'
+end
+
+group :production do
+gem 'unicorn'
+gem 'pg'
+end
 gem  'wicked'
 gem  'omniauth-google-oauth2'
 gem 'oa-core'
@@ -42,6 +50,6 @@ gem "cancan"
 gem "jquery-rails"
 #gem "rspec-rails", ">= 2.0.1", :group => [:development, :test]
 #gem "capybara", :group => [:development, :test]
-gem 'twitter-bootstrap-rails', :git => 'http://github.com/seyhunak/twitter-bootstrap-rails.git'
+gem 'twitter-bootstrap-rails'
 
 
