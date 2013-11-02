@@ -13,7 +13,7 @@ end
 
 group :production do
 gem 'unicorn'
-#gem 'pg'
+gem 'pg'
 end
 gem  'wicked'
 gem  'omniauth-google-oauth2'
