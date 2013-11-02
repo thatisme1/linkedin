@@ -1,0 +1,68 @@
+
+
+<%= form_for @user, :url=>{:controller=>'registration',:action=>'step2',:abc=>@fuck},:html=>{:id=>"signupForm1", :onsubmit=>" return check_form_input()"} do |f|  %>
+
+
+
+
+
+
+  <ul class="signup">
+  
+
+    <li class="signuplist">
+    <%= f.label :'First Name' ,:class=>"signupleft" %>
+	<div class="error_textbox">
+
+    <span id="firstname_error" class="error hidden">Please Enter a First Name.</span>
+      <%= f.text_field :fname ,:class=>"signuptextbox text"%>
+    </div>
+		</li>
+  
+  
+  
+  <li class="signuplist">
+    <%= f.label :'Last Name',:class=>"signupleft"%>
+	<div class="error_textbox">
+    <span id="lastname_error" class="error hidden">Please Enter a Last Name. </span>
+      <%= f.text_field :lname ,:class=>"signuptextbox text"%>
+    </div>	
+  </li>
+  
+  <li class="signuplist">
+    <%= f.label :email ,:class=>"signupleft"%>
+	<div class="error_textbox">
+
+    <% if @user.errors[:email].any? %>
+    <span id="error_server_email" class="error"><%='Email '+@user.errors[:email].first%></span>    
+    <%end%>
+
+
+    <span id="noemail" class="error hidden">Please enter a valid email address.</span>
+    <span id="wrongemail" class="error hidden">The text you provided is too short (the minimum length is 3 characters, your text contains 1 characters).</span>
+      <%= f.text_field :email ,:class=>"signuptextbox text"%>
+    </div>
+  </li>
+  
+  <li class="signuplist">
+    <%= f.label :password ,:class=>"signupleft"%>
+	<div class="error_textbox">
+    <span id="nopassword" class="error hidden">Please enter a password.</span>
+    <span id="wrongpassword" class="error hidden">The password you provided must have at least 6 characters.</span>
+      <%= f.text_field :password ,:type=>"password",:class=>"signuptextbox text"%>
+       <span class="hint">6 or more characters</span>
+          <div class="top-margin">
+            <%= f.submit 'Join Now'  ,:class=>'btn-tertiary' , :id=>'submit_button' %>
+
+                    <a href="#agreement">*</a>
+                  </div>
+                    <p class="top-margin">Already on Linkedin? <%=link_to 'Sign In', new_user_session_path%></p>
+    </div>
+  </li>
+
+
+</ul>   
+<% end %>
+
+
+<%=javascript_include_tag 'test.js'%>

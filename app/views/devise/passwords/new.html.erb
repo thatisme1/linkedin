@@ -1,0 +1,61 @@
+<%= stylesheet_link_tag 'forgot_password.css' %> 
+
+    <div id="body">
+   
+    <div id = "start">
+<% if false%>
+                    <div id = "Global_Error" >
+                    
+                    <div id = "Error">
+                
+                    </div>
+                    
+                    <div id= "message">
+
+                        <p><strong>Please Correct marked field(s) below.</stong></p>
+
+                    </div>
+                    
+                    </div>
+<% end %>
+
+
+     <h1>
+     Changing your password is simple
+     </h1>
+    
+    
+    <%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+           
+    <ul>
+     
+     <li>
+
+            <label>Please enter your email address to get instructions.</label>
+            <div id = "error1">
+                Please enter a value.
+            </div>
+            
+    </li>
+    
+    <li>
+
+ 
+        <%=f.text_field :email ,:class=>'text'%>
+
+    </li>
+    
+    <li>
+            <div class = "signin">
+            <%= f.submit "Send password reset", :class => "submitbutton"  %>
+            </div>
+        
+    </li>
+     
+     </ul>
+     <%end%>
+
+      </div>
+    
+    </div>
+

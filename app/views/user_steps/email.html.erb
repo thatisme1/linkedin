@@ -1,0 +1,138 @@
+
+<%= stylesheet_link_tag "2.css"%>
+
+<div class = "body_wrapper">
+	
+
+	
+<div id = "container">
+
+<div id = "remaining">
+Grow your network on LinkedIn
+
+</div>
+
+</div>
+
+<div id ="container1">
+
+<p class="introduction">
+      Get started by adding your email address.
+</p>
+
+
+						<%=form_for @user ,:url=>{:controller=>'user_steps', :action=>'update'} do |f|%>
+
+
+<%if @flag!=true %>
+<div class = "error" id = "error1">
+
+			<strong>Please Enter a Valid Email Address.</strong>
+</div>
+<%end%>
+<li>
+						
+						   <label> Your Email:</label>
+							<div class = "text">
+				    		    <input type="text" name="email" value=<%= @email %>>
+						    </div>
+							
+</li>
+
+
+<button class="submitbutton" type="submit" id="btn-submit">Continue</button>
+<%end%>
+<p class = "foot1">
+We will not store your password or email anyone without your permission.
+</p>
+
+
+</div>
+
+<div id = "skip">
+
+<a id="skipButton" href="#skip" >                 <!--java script-->
+              Skip this step
+            </a>
+			
+            »
+</div>
+
+<div id = "Enter">
+</div>
+													
+	
+</div>
+
+
+
+
+<html>
+<%=stylesheet_link_tag 'a.css'%>
+<%=stylesheet_link_tag 'jquery-ui-1.10.3.custom.css'%>
+<%=javascript_include_tag 'jquery-ui-1.10.3.custom.js'%>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+
+	
+	<div id="dialog-wrapper" class="ui-widget-content ">
+	
+	<div class="dialog-mask" >
+	
+	<div class="dialog-window" >
+	<div class="dialog-title">
+	<h3 id="li-dialog-aria-label" class="title">Skip seeing who you already know?</h3>
+	</div>
+	<div class="dialog-body">
+	<div class="dialog-content" >
+	<div class="dialog-container" id="abook-benefits-prompt">
+    <div class="alert">
+      <p>
+        If you skip this step, you'll miss out on easily finding people you know on LinkedIn.
+      </p>
+    </div>
+    <p class="actions">
+      <button type="button" class="btn-primary dialog-close" id="benefitsContinue">Find now</button>
+      <%= link_to 'Skip',next_wizard_path ,  :class=>'btn-secondary'%>
+      
+    </p>
+  </div></div></div></div></div>
+  </div>
+    
+	
+<script>
+var x= false;
+$(document).ready($("#dialog-wrapper").hide());
+  $(function() {
+    $( "#dialog-wrapper" ).draggable({containment: "body" , scroll: false});
+  });
+      $(document).keyup(function(e) { 
+        if (e.keyCode == 27) { // esc keycode
+            $('#dialog-wrapper').hide();
+            $('#mask').remove();
+        }
+    });
+
+
+$("body").click(function(){
+  $("#dialog-wrapper").hide();
+});
+
+// Prevent events from getting pass .popup
+$("#dialog-wrapper").click(function(e){
+  e.stopPropagation();
+
+});
+$("#skipButton").click(function(e){
+  e.stopPropagation();
+
+});
+$("#skipButton").click(function(){
+ 		$("#dialog-wrapper").show();
+
+});
+
+
+
+  </script>

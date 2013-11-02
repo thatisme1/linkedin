@@ -1,0 +1,195 @@
+@charset "utf-8";
+
+
+
+
+
+
+
+input:focus
+{
+	box-shadow:0px 0px  3px 0px blue;
+	outline-color:blue;
+}
+.foot1
+{
+	font-size: 11px;
+	color: #555;
+	margin-left:160px;
+	margin-right:auto;
+	margin-bottom: 10px;
+}
+.foot p
+{
+display:inline;
+}
+
+.foot1 p
+{
+display:inline;
+}
+
+#container
+{
+		width:775px;
+		height: auto;
+	    border-bottom: 1px solid #CCCCCC;
+		margin-left: 10px;		 
+}
+
+
+#remaining
+{
+padding-top: 15px;
+color:#39c;
+padding-bottom: 10px;
+padding-left: 5px;
+
+}
+
+
+li {
+display: list-item;
+text-align: -webkit-match-parent;
+margin-left: 50px;
+padding: 0;
+border: 0;
+outline: 0;
+font-weight: inherit;
+font-style: inherit;
+font-size: 100%;
+font-family: inherit;
+vertical-align: baseline;
+height: 45px;
+list-style: none outside none;
+
+}
+
+
+label{
+font-size: 13px;
+color: #333;
+background-color: transparent;
+font-weight: bold;
+display: block;
+float: left;
+text-align: right;
+width: 97px;
+height: 21px
+}
+
+.text input
+{
+position : relative;
+width: 300px;
+margin-left : 10px;
+float : left;
+margin-bottom: 10px;
+
+}
+.text email
+{
+position : relative;
+width: 300px;
+margin-left : 10px;
+float : left;
+margin-bottom: 10px;
+}
+
+
+button {
+width: auto;
+max-width: 183px;
+zoom: 1;
+cursor: pointer;
+}
+
+.error
+{
+	font-size : 12px;
+	color: #900;
+	position: relative;
+	margin-left: 25px;
+	
+}
+.hint
+{
+	font-size:11px;
+	line-height: 1.5;
+	display:block;
+	margin-left:108px;
+	color: #666;
+}
+
+
+.submitbutton
+{
+vertical-align: middle;
+font-family: Arial,sans-serif;
+background: #0571A6;
+border-color: #045a8b;
+color: #fff !important;
+border-width: 1px;
+border-style: solid;
+border-width: 1px;
+border-style: solid;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+cursor: pointer;
+font-size: 12px;
+line-height: 1.35;
+margin-left: 160px;
+overflow: visible;
+padding: 3px 10px 2px;
+margin-bottom: 10px;
+
+}
+
+.submitbutton:hover
+{
+	background: #1B698F;
+}
+
+
+
+#container1
+{
+margin-top: 15px;
+margin-left: 125px;
+background: #DDF0F8;
+border: 1px solid #9acce6;
+-moz-border-radius: 6px;
+-webkit-border-radius: 6px;
+border-radius: 6px;
+width: 550px;
+
+}
+
+.introduction
+{
+font-size: 80%;
+margin: 15px 10px 15px 25px;
+padding: 0;
+border: 0;
+outline: 0;
+font-weight: inherit;
+font-style: inherit;
+font-family: inherit;
+vertical-align: baseline;
+}
+
+#skip {
+width: 550px;
+margin: 15px auto 40px auto;
+text-align: right;
+font-size: 80%;
+margin-bottom: 50px;
+}
+
+#Enter {
+height: 8px;
+background :white;
+
+}
+
+

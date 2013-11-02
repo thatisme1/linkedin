@@ -1,0 +1,92 @@
+<!--
+
+<div class="container">
+	<div class="row">
+		<h2>Sign in</h2>
+		
+		<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+
+		<fieldset>
+		  <div class="clearfix">
+			  <%= f.label :email %>
+			  <div class="input">
+			  	<%= f.email_field :email %>
+			  </div>
+		  </div>
+
+		  <div class="clearfix">
+			  <%= f.label :password %>
+			  <div class="input">
+				  <%= f.password_field :password %>
+			  </div>
+		  </div>
+		  
+		  <div class="clearfix">
+			  <div class="input">
+			  	<%= f.submit "Sign in", :class => "btn large primary" %>
+			  </div>
+		  </div>
+
+		  <% if devise_mapping.rememberable? -%>
+		  	<div class="clearfix">
+				<label>&nbsp;</label>
+			    <div class="input">
+			    	<%= f.check_box :remember_me %>
+			    	<span>Remember me</span> | 
+			    	<span><a href="/users/password/new">Forgot your password?</a></span>
+			    </div>
+		    </div>
+		  <% end -%>
+
+		</fieldset>
+		<% end %>
+
+		</div>
+	</div>
+</div>
+-->
+
+<%= stylesheet_link_tag 'signin.css'%>
+<div class="wrapper">
+<div id = "body">
+
+  <div id = "pagetitle">
+    <h1>
+      Sign in to LinkedIn
+    </h1>
+  </div>
+  <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <ul>
+
+    <li><%= f.label :email %>
+      <div class="text ">
+        <%= f.email_field :email %>
+      </div>
+    </li>
+
+
+    <li>
+      <%= f.label :password %>
+      <div class="text ">
+        <%= f.password_field :password  %>
+
+
+      </div>
+
+        <a class="forgot-password" href="/users/password/new">Forgot your password?</a>
+    </li>
+
+    <li>
+      <div class = "signin">
+        <%=f.submit "Sign In" , :class =>"submitbutton"%>
+        &nbsp; or
+        <a class="forgot-password" href="/users/sign_up"> Join LinkedIn</a>
+      </div>
+
+    </li>
+
+  </ul>
+  <% end %>
+
+</div>
+</div>

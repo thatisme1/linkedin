@@ -1,0 +1,64 @@
+
+<%= stylesheet_link_tag "5.css"%>
+
+<div class = "wrapper">
+<div id="metal-body">
+
+<div id="wrap-a">
+<div id="progress-a">
+<h1>Congratulations! You've just created your professional profile.</h1>
+<span> Step <strong>4</strong> of <strong>7</strong></span>
+</div>
+<div class="info-main">
+<div class="info-block">
+
+<h2><%=@user.fname + ' ' + @user.lname%></h2>
+
+<p class="occupation">Student at FAST NU</p>
+
+ <p class="geography">  <%=current_user.country.name%> </p>
+
+
+</div>
+
+<div class="link-block">
+<textarea id="broadcastMessage-Form" class="" maxlength="420" name="broadcastMessage" data-base-height="34">
+I just joined LinkedIn and created my professional profile. Join my network. http://lnkd.in/bFy_AJG
+    </textarea>
+	<div id="profile_url">
+	Your profile URL: http://lnkd.in/bFy_AJG
+	</div>
+
+
+
+	
+</div>
+<a href="#" id="fb-anchor" target="_blank">
+     
+<button class="btn-icon" data-li-service="FACEBOOK" id="fb-share"><span>
+      
+                    Share on Facebook
+              
+    </span></button>
+<a>
+
+<a href="https://twitter.com/intent/tweet" target="_blank" data-count="none" id="tweet-anchor" data-text="njhkjh">
+<button class="btn-icon " data-li-service="TWITTER" id="tweet">
+	
+		<span>
+      
+                    Share on Twitter
+              
+    </span></button>
+	</a>
+	
+	<p class="actions-a">  
+		<%=link_to 'Skip this step' ,next_wizard_path%>
+
+    </span></p>
+	
+</div>
+</div>
+</div>
+</div>
+<%= javascript_include_tag "user_steps.js"%>

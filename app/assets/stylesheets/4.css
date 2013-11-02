@@ -1,0 +1,87 @@
+@charset "utf-8";
+
+#remaining
+{
+padding-top: 10px;
+color:#39c;
+padding-left: 10px;
+margin-left: 5px;
+
+}
+
+
+input:focus
+{
+	box-shadow:0px 0px  3px 0px blue;
+	outline-color:blue;
+}
+
+
+button {
+width: auto;
+max-width: 183px;
+zoom: 1;
+cursor: pointer;
+}
+
+
+.submitbutton
+{
+vertical-align: middle;
+font-family: Arial,sans-serif;
+background: #0571A6;
+border-color: #045a8b;
+color: #fff !important;
+border-width: 1px;
+border-style: solid;
+border-width: 1px;
+border-style: solid;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+cursor: pointer;
+font-size: 12px;
+line-height: 1.35;
+margin-top: 15px;
+margin-left: 18px;
+overflow: visible;
+padding: 3px 10px 2px;
+margin-bottom: 15px;
+
+}
+
+.submitbutton:hover
+{
+	background: #1B698F;
+}
+
+#container1
+{
+margin-top: 75px;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 75px;
+background: #DDF0F8;
+border: 1px solid #9acce6;
+-moz-border-radius: 6px;
+-webkit-border-radius: 6px;
+border-radius: 6px;
+width: 550px;
+
+}
+
+#container1 p
+{
+margin-top: 10px;
+color: #333;
+margin-left: 15px;
+font-size: 80%;
+margin-right: 1px;
+}
+
+.Enter {
+height: 8px;
+background :white;
+
+}
+
+

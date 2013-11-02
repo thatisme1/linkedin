@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	
+	<head>
+		<script src="javascripts/jquery.min.js" ></script>
+		<%= stylesheet_link_tag "header.css"%>
+		<link rel="shortcut icon" href="favicon.ico">
+		<%= favicon_link_tag "/favicon.ico?1" %>
+	    <!--<link rel="shortcut icon" href="/images/in.gif"> -->
+		<title>Join LinkedIn | LinkedIn</title>
+		
+		
+	</head>
+	
+	<body>
+<!--Header-->    	
+    	<div id = "header">
+			<div class="wrapper" align="center">
+
+				<div href="#" class="logo" id="li-logo"> </div>
+				<% if !user_signed_in? %>
+				<ul class="menu">
+					<li id="nav-primary-auth">
+									Already on LinkedIn? 
+									<%=link_to 'Sign In', new_user_session_path%>
+					</li>
+				</ul>
+				<%end%>
+				
+             </div>
+        </div>
+		
+        	
+<!--Header ends-->	
+<div class="wrapper">
+<%= yield %>
+</div>
+
+<!--Footer -->
+		
+				<div class = "wrapper">
+					<div id = "foot">
+						<p class = "footer">
+	    					LinkedIn Corporation © 2013   |
+						</p>
+						<p class = "footer2">
+		    				Commercial use of this site without express authorization is prohibited.
+
+						</p>
+					</div>
+				</div>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!--
+<div class="container">
+	<div class="row">
+
+	<h2>Sign up</h2>
+	
+	<%= devise_error_messages! %>
+	<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
+
+		<fieldset>
+	
+			<div class="clearfix">
+				<%= f.label :email %>
+				<div class="input">
+					<%= f.email_field :email %>
+				</div>
+			</div>
+	
+			<div class="clearfix">
+				<%= f.label :password %>
+				<div class="input">
+					<%= f.password_field :password %>
+				</div>
+			</div>
+	
+			<div class="clearfix">
+				<%= f.label :confirm, :for => "user_password_confirmation" %>
+				<div class="input">
+					<%= f.password_field :password_confirmation %>
+				</div>
+			</div>
+	
+			<div class="clearfix">
+				<div class="input">
+					<%= f.submit "Sign up", :class => "btn large primary" %>
+				</div>
+			</div>
+	
+			<% end %>
+	
+		</fieldset>
+
+	</div>
+</div>
+
+<%= form_for @user ,:html=>{:id=>"signupForm1", :onsubmit=>" return check_form_input()"} do |f|  %>
+	<%if @user.errors.any? %>
+	<% @user.errors.full_messages.each do |message| %>
+	  <p>
+	    <%= message %>
+	  </p>
+	  <%end%>
+	<%end%>
+  
+  <ul class="signup">
+  
+
+    <li class="signuplist">
+    <%= f.label :'First Name' ,:class=>"signupleft" %>
+	<div class="error_textbox">
+    <span id="firstname_error" class="error hidden">Please Enter a First Name.</span>
+      <%= f.text_field :fname ,:class=>"signuptextbox"%>
+    </div>
+		</li>
+  
+  
+  
+  <li class="signuplist">
+    <%= f.label :'Last Name',:class=>"signupleft"%>
+	<div class="error_textbox">
+    <span id="lastname_error" class="error hidden">Please Enter a Last Name. </span>
+      <%= f.text_field :lname ,:class=>"signuptextbox"%>
+    </div>	
+  </li>
+  
+  <li class="signuplist">
+    <%= f.label :email ,:class=>"signupleft"%>
+	<div class="error_textbox">
+    <span id="noemail" class="error hidden">Please enter a valid email address.</span>
+    <span id="wrongemail" class="error hidden">The text you provided is too short (the minimum length is 3 characters, your text contains 1 characters).</span>
+      <%= f.text_field :email ,:class=>"signuptextbox"%>
+    </div>
+  </li>
+  
+  <li class="signuplist">
+    <%= f.label :password ,:class=>"signupleft"%>
+	<div class="error_textbox">
+    <span id="nopassword" class="error hidden">Please enter a password.</span>
+    <span id="wrongpassword" class="error hidden">The password you provided must have at least 6 characters.</span>
+      <%= f.text_field :password ,:type=>"password",:class=>"signuptextbox"%>
+       <span class="hint">6 or more characters</span>
+
+                    <button type="submit"  id="submit_button">Join Now</button>
+                    <a href="#agreement">*</a>
+                    <p>Already on Linkedin? <a href="login.html">Sign in</a></p>
+    </div>
+  </li>
+
+
+</ul>   
+<% end %>
+
+
+
+<%=render 'devise/registrations/form'%>-->

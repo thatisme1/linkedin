@@ -1,0 +1,324 @@
+@charset "utf-8";
+
+*{
+padding:0;
+margin:0;
+}
+body
+{ 
+    background-color:#e6e6e6;
+    margin-top:0px;
+    margin-left:0px;
+    padding-top:0px;
+}
+
+
+
+
+
+
+#li-logo{
+	height:22px;
+	margin-top:4px;
+	width:92px;
+	background:url("../images/logo_linkedin.png");
+	display:block;
+	float:left;
+}
+
+
+
+
+
+
+
+input:focus
+{
+	box-shadow:0px 0px  3px 0px blue;
+	outline-color:blue;
+}
+
+
+#container
+{
+		width:775px;
+		height: auto;
+	    border-bottom: 1px solid #CCCCCC;
+		margin-left: 10px;		 
+}
+
+#name
+{
+padding-top: 10px;
+color:#39c;
+padding-bottom: 5px;
+display : inline-block;
+float: left;
+}
+#remaining
+{
+padding-top: 10px;
+color:#39c;
+padding-bottom: 5px;
+}
+
+#content
+{
+	margin-top: 10px;
+	margin-left: 20px;
+	vertical-align: top;
+	width:60%;
+	display : inline-block;
+	margin-bottom: 20px;
+	
+	
+}
+
+#Extra
+{
+	margin-top: 10px;
+	width:35%;
+	display: inline-block;	
+}
+#motivation
+{
+width: 280px;
+_width: 270px;
+float: right;
+margin-top: 10px;
+display: inline;
+position: relative;
+z-index: 1;
+}
+
+#motivation .profile-features {
+border: 1px solid #baddee;
+padding: 10px;
+}
+
+#motivation .profile-features h3 {
+font-weight: bold;
+font-size: 100%;
+margin-bottom: 10px;
+background: url('../images/icon_lightbulb_10x17.png') no-repeat;
+padding-left: 20px;
+}
+
+
+li {
+display: list-item;
+text-align: -webkit-match-parent;
+margin: 0;
+padding: 0;
+border: 0;
+outline: 0;
+font-weight: inherit;
+font-style: inherit;
+font-size: 100%;
+font-family: inherit;
+vertical-align: baseline;
+height: 45px;
+
+}
+
+
+label{
+font-size: 13px;
+color: #333;
+background-color: transparent;
+font-weight: bold;
+display: block;
+float: left;
+text-align: right;
+width: 97px;
+height: 21px
+}
+ul
+{
+margin-top: 10px;
+margin-left: 50px;
+
+list-style: none outside none;
+}
+
+.text input
+{
+position : relative;
+width: 300px;
+margin-left : 10px;
+float : left;
+margin-bottom: 10px;
+
+}
+.text select
+{
+position : relative;
+width: 300px;
+margin-left : 10px;
+float : left;
+margin-bottom: 10px;
+}
+.small select
+{
+margin-left: 10px;
+width: 100px;
+}
+.date
+{
+margin-left: 95px;
+}
+
+#radio
+{
+position : relative;
+width: 300px;
+font-size: 14px;
+margin-left : 10px;
+float : left;
+margin-bottom: 10px;
+
+}
+.date label
+{
+margin-left: 5px;
+width : 20px;
+}
+
+button {
+width: auto;
+max-width: 183px;
+zoom: 1;
+cursor: pointer;
+}
+
+.error
+{
+	font-size : 12px;
+	color: #900;
+	position: relative;
+	padding-left: 105px;
+	
+}
+
+
+
+.submitbutton
+{
+vertical-align: middle;
+font-family: Arial,sans-serif;
+background: #0571A6;
+border-color: #045a8b;
+color: #fff !important;
+border-width: 1px;
+border-style: solid;
+border-width: 1px;
+border-style: solid;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+cursor: pointer;
+font-size: 12px;
+line-height: 1.35;
+margin-top: 10px;
+margin-left: 150px;
+overflow: visible;
+padding: 3px 10px 2px;
+margin-bottom: 10px;
+
+}
+
+.submitbutton:hover
+{
+	background: #1B698F;
+}
+
+
+.motivation ul
+{
+margin: 0;
+padding: 0;
+border: 0;
+outline: 0;
+font-weight: inherit;
+font-style: inherit;
+font-size: 100%;
+font-family: inherit;
+vertical-align: baseline;
+display: block;
+-webkit-margin-before: 1em;
+-webkit-margin-after: 1em;
+-webkit-margin-start: 0px;
+-webkit-margin-end: 0px;
+-webkit-padding-start: 40px;
+}
+#motivation .profile-features li.first {
+margin-top: 0;
+}
+
+#motivation .profile-features li {
+font-size: 80%;
+background: #fff url('../images/sprite_registration_v2.png') no-repeat scroll 0 -297px;
+padding-left: 25px;
+margin: 0;
+border: 0;
+outline: 0;
+font-weight: inherit;
+font-style: inherit;
+font-family: inherit;
+vertical-align: baseline;
+display: list-item;
+text-align: -webkit-match-parent;
+list-style: none;
+height: 25px;
+}
+
+
+#Global_Error
+{
+
+		margin-top:15px;
+		margin-left : 10px;
+		width:775px;
+		height: 40px;
+		position:relative;
+		background : rgb(255, 238, 238);
+		margin-bottom: 15px;
+
+}
+#Error
+{
+	height:26px;
+	margin-top:9px;
+	margin-left:9px;
+	width:26px;
+	background:url("../images/cross.png");
+	display:block;
+	float:left;
+
+}
+
+#message {
+	position : absolute;
+    margin: 0 15px;
+	margin-top: 8px;
+	padding: 6px 7px 6px 35px;
+    overflow: hidden;
+    min-height: 20px;
+}
+ 
+ #message p{
+ margin: 0;
+padding: 0;
+border: 0;
+outline: 0;
+font-weight: inherit;
+font-style: inherit;
+font-size: 80%;
+font-family: inherit;
+vertical-align: baseline;
+}
+
+
+
+
+
+

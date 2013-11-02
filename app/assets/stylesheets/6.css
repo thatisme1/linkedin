@@ -1,0 +1,113 @@
+.wrapper
+{
+	width:805px;
+	margin-left:auto;
+	margin-right:auto;
+	color: #666666;
+	margin-bottom: 0px;
+	height: auto;
+}
+
+
+#body-a{
+background: none repeat scroll 0% 0% rgb(255, 255, 255);
+padding: 0px;
+border: 1px solid rgb(204, 204, 204);
+height: auto;
+width: 805px;
+margin-top: 10px;
+padding-bottom: 12px;
+}
+
+
+#wrap{
+margin-left:8px;
+height:inherit;
+}
+
+#main{}
+
+#progress {
+height: 32px;
+overflow: hidden;
+border-bottom: 1px solid rgb(204, 204, 204);
+padding-bottom: 5px;
+margin-bottom: 15px;
+margin-top: 10px;
+}
+
+#progress h1{
+ font-size: 19px;
+float:left;
+width:77%;
+color: rgb(51, 153, 204);
+font-weight:normal; 
+}
+
+#progress span{
+float:left;
+font-size:110%;
+}
+
+
+.contacts {
+width: 98%;
+margin-bottom: 30px;
+}
+
+
+.contacts-block{
+margin-top:12px;
+border:1px solid rgb(204, 204, 204);
+height:312px;
+}
+
+.contacts-header{
+margin-top:0px;
+border: 1px solid rgb(204, 204, 204);
+padding-top:17px;
+height:5px;
+background: -moz-linear-gradient(center top , rgb(255, 255, 255) 5%, rgb(242, 242, 242) 90%) repeat scroll 0% 0% transparent;
+}
+
+.select-all{
+font-weight:normal;
+display:inline;
+position:relative;
+bottom:18px;
+}
+	
+.number-selected{
+font-weight:normal;
+display:inline;
+position:relative;
+bottom:18px;
+font-size:12px;
+margin-left:600px;
+color:rgb(204, 204, 204)
+}
+
+.actions a{
+font-size:13px;
+text-decoration: none;
+color: rgb(0, 102, 153);
+}
+
+.add{
+background: #0571A6;
+background: -moz-linear-gradient(center top , rgb(115, 174, 201) 0px, rgb(115, 174, 201) 1px, rgb(51, 138, 176) 1px, rgb(5, 113, 166) 100%) repeat scroll 0% 0% transparent;
+border-color: rgb(4, 90, 139);
+color: rgb(255, 255, 255);
+border-width: 1px;
+border-style: solid;
+border-radius: 3px 3px 3px 3px;
+cursor: pointer;
+font-size: 12px;
+line-height: 1.35;
+margin: 0px;
+overflow: visible;
+padding: 3px 10px 2px;
+text-decoration: none ;
+vertical-align: top;
+width: auto;
+}

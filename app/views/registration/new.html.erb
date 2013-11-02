@@ -1,0 +1,155 @@
+    <%=stylesheet_link_tag 'jointoday.css'%>
+          
+<!--Header ends-->  
+
+    <div id="body">
+      <div class = "body_wrapper">
+      
+      <div class = "Enter" align = "center"> 
+      </div>
+            <div class = "main" >
+          
+        <% if @user.errors.any? %>
+                      <div id="global-error">
+                       <div id = "Global_Error" align = "center">
+                        
+                            <div id = "Error">
+                      
+                            </div>
+                    
+                            <div id="message">
+                                          <p><strong>There were one or more errors in your submission. Please correct the marked fields below.</strong></p>
+                            </div>
+                        
+                        </div>
+                      <div class = "Enter" align = "center">
+                      </div>
+                      </div>
+        <% else %>
+              <div id="global-error" class="hidden">
+                      <div id = "Global_Error" align = "center">
+            
+                          <div id = "Error">
+                    
+                          </div>
+                  
+                          <div id="message">
+                                        <p><strong>There were one or more errors in your submission. Please correct the marked fields below.</strong></p>
+                          </div>
+                      
+                      </div>
+                    <div class = "Enter" align = "center">
+                    </div>
+                </div>
+      <%end%>
+            <div id = "arrow">
+              <div class="introduction">
+                <h1>
+                To join LinkedIn, sign up below...it's free!
+                </h1>
+            
+              </div> 
+            </div>
+            
+            <!----------------------------------------->
+            
+            <div id = "container">
+                <div id = "content">
+            
+
+            <!---->
+<%= render 'form' %>
+<!--
+                    <ul>
+                        <li>
+                            <label>First Name:</label>
+                            <div class = "text">
+                                <input type="text" name = " name" maxlength="20" >
+                            </div>
+                        </li>
+                        <li>
+            
+                <label>Last Name:</label>
+                            <div class = "text">
+                    <input type="text" name="lastname">
+                </div>
+                </li>
+          
+                            <li>
+                    <label>Email:</label>
+                    <div class = "text">
+                        <input type="text" name="Email">
+                    </div>
+                </li>
+                <li>
+                    <label>New Password:</label>
+                    <div class = "text">
+                        <input type="text" name="password">
+                    </div>
+                </li>
+                <li>
+                    <span class="hint">6 or more characters</span>
+                </li>
+              </ul>
+            <!---->
+            
+    <!--        <button class="btn-tertiary" type="submit" id="btn-submit"><div>Join LinkedIn</div></button>
+            -->
+                        <abbr title="By clicking Join LinkedIn, you are indicating that you have read, understood, and agree to LinkedIn's User Agreement and Privacy Policy" class="hidden"><em>*</em></abbr>
+            
+              <!--                  <div id = "register-custom-nav" >
+                    <p>
+            
+                                Already on LinkedIn? <a href="login.html">Sign in</a>
+                
+                    </p>
+
+
+            </div>
+-->
+
+            </div>
+            
+
+            <div id = "Extra">
+            
+            <!--<div id = "add">
+            
+            </div>-->
+                <div id = "facebook">
+            
+                    <div class="handwritten">
+                    </div>
+            
+                 <div class = "facebookbutton" ></div>
+             <abbr title="By clicking Join LinkedIn, you are indicating that you have read, understood, and agree to LinkedIn's User Agreement and Privacy Policy">*</abbr>
+             
+            </div>
+            
+            </div>
+            
+            
+            </div>
+            
+            
+            <p id="agreement" align="center">
+                <strong>*</strong>
+                By joining LinkedIn, you agree to LinkedIn's
+                        <span>  <%=link_to "User Agreement" , useragreement_path %> </span>,
+        <span>  <%=link_to "Privacy Policy" , privacypolicy_path %></span>
+                
+                
+              and
+                  <%=link_to 'Cookie Policy' , cookiepolicy_path %>
+                    .
+            </p>
+            
+            
+            </div>
+            
+            
+            
+            
+            
+          </div>
+          

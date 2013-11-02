@@ -1,0 +1,118 @@
+@charset "utf-8";
+ul {
+list-style: none;
+}
+
+#remaining
+{
+padding-top: 10px;
+color:#39c;
+padding-left: 10px;
+margin-left: 5px;
+
+}
+
+.wrapper
+{
+	width:805px;
+	margin-left:auto;
+	margin-right:auto;
+	color: #666666;
+	margin-bottom: 10px;
+}
+
+#li-logo{
+	height:22px;
+	margin-top:4px;
+	width:92px;
+	background:url("../images/logo_linkedin.png");
+	display:block;
+	float:left;
+}
+input:focus
+{
+	box-shadow:0px 0px  3px 0px blue;
+	outline-color:blue;
+}
+
+
+button {
+width: auto;
+max-width: 183px;
+zoom: 1;
+cursor: pointer;
+}
+
+
+.submitbutton
+{
+vertical-align: middle;
+font-family: Arial,sans-serif;
+background: #0571A6;
+border-color: #045a8b;
+color: #fff !important;
+border-width: 1px;
+border-style: solid;
+border-width: 1px;
+border-style: solid;
+-webkit-border-radius: 3px;
+border-radius: 3px;
+cursor: pointer;
+font-size: 12px;
+line-height: 1.35;
+margin-top: 15px;
+margin-left: 18px;
+overflow: visible;
+padding: 3px 10px 2px;
+margin-bottom: 15px;
+
+}
+
+.submitbutton:hover
+{
+	background: #1B698F;
+}
+
+
+
+
+#container1
+{
+margin-top: 75px;
+margin-left: 125px;
+background: #DDF0F8;
+border: 1px solid #9acce6;
+-moz-border-radius: 6px;
+-webkit-border-radius: 6px;
+border-radius: 6px;
+width: 550px;
+
+}
+
+#container1 p
+{
+margin-top: 10px;
+color: #333;
+margin-left: 15px;
+font-size: 80%;
+}
+
+
+
+#skip {
+width: 550px;
+text-align: right;
+font-size: 80%;
+margin-bottom: 10px;
+margin-top: -35px;
+float : right;
+margin-right : 5px;
+}
+
+.Enter {
+height: 8px;
+background :white;
+
+}
+
+
