@@ -15,5 +15,5 @@ capybara-*.html
 /config/*.yml
 rerun.txt
 pickle-email-*.html
-
 *.yml
+db/migrate/*.rb
