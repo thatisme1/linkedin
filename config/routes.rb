@@ -37,12 +37,12 @@ Bootstrap::Application.routes.draw do
   #atch "/whatis", :controller => "page", :action => "whatis"
   
   resources :user_steps
-  get '/user_steps/professional' => 'user_steps#professional'
-  get '/user_steps/email' => 'user_steps#email'
-  get '/user_steps/authentication' => 'user_steps#authentication'
-  get '/user_steps/confirm' => 'user_steps#confirm'
-  get '/user_steps/share' => 'user_steps#share'
-  get '/user_steps/add' => 'user_steps#add'
+  match '/user_steps/professional' => 'user_steps#professional'
+  match '/user_steps/email' => 'user_steps#email'
+  match '/user_steps/authentication' => 'user_steps#authentication'
+  match '/user_steps/confirm' => 'user_steps#confirm'
+  match '/user_steps/share' => 'user_steps#share'
+  match '/user_steps/add' => 'user_steps#add'
   
   # get "home/index"
 
