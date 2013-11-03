@@ -46,7 +46,7 @@ gem 'rails_12factor'
 # group :development, :test do
 #   gem 'webrat'
 # end
-gem "devise", :git => "https://github.com/plataformatec/devise.git"
+gem "devise"#, :git => "https://github.com/plataformatec/devise.git"
 
 gem "cancan"
 gem "jquery-rails"
