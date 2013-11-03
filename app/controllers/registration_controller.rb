@@ -1,5 +1,5 @@
 class RegistrationController < Devise::RegistrationsController
-	before_filter !:user_signed_in
+	before_filter :checklogin	
 
 	layout 'header2'
 
@@ -9,12 +9,12 @@ class RegistrationController < Devise::RegistrationsController
 		@fuck='1'
 
 		@user = User.new 
-		
-#		respond_to do |format|
-#			format.html
-#			format.json {render :json => @user}
-#
-#		end
+
+		respond_to do |format|
+			format.html
+			format.json {render :json => @user}
+
+		end
 
 		
 
@@ -37,7 +37,7 @@ class RegistrationController < Devise::RegistrationsController
 			else  
 				if params[:abc]=='1'
 					@fuck=1
-					#raise ArgumentError,"sad"
+
 					render  'new' 
 					return
 					
@@ -55,6 +55,13 @@ class RegistrationController < Devise::RegistrationsController
 
 	def update
 		super
+	end
+
+	def checklogin
+		if user_signed_in?
+			redirect_to users_path
+		end
+		
 	end
 
 end

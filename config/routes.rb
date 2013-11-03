@@ -18,7 +18,9 @@ Bootstrap::Application.routes.draw do
   resources :users
 
   get 'users/:id/edit2' => 'users#edit'
-  devise_scope :user do match "fail" => "registration#step2" end
+  devise_scope :user do match "login" => "registration#step2" end
+
+
  
 
   resources :page
