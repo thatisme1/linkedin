@@ -22,27 +22,27 @@ Bootstrap::Application.routes.draw do
  
 
   resources :page
-  match '/whatis' => 'page#whatis'
-  match '/about' => 'page#about'
-  match '/useragreement' => 'page#useragreement'
-  match '/privacypolicy' => 'page#privacypolicy'
-  match '/cookiepolicy' => 'page#cookiepolicy'
-  match '/ahmad1' => 'page#ahmad1'
-  match  '/ahmad2' => 'page#ahmad2'
-  match  '/ahmad3' => 'page#ahmad3'
-  match  '/ahmad4' => 'page#ahmad4'
-  match  '/ahmad6' => 'page#ahmad6'
-  match  '/ahmad5' => 'page#ahmad5'
-  match  '/ahmad7' => 'page#ahmad7'
-  match "/whatis", :controller => "page", :action => "whatis"
+  get '/whatis' => 'page#whatis'
+  get '/about' => 'page#about'
+  get '/useragreement' => 'page#useragreement'
+  get '/privacypolicy' => 'page#privacypolicy'
+  get '/cookiepolicy' => 'page#cookiepolicy'
+  #match '/ahmad1' => 'page#ahmad1'
+  #match  '/ahmad2' => 'page#ahmad2'
+  #match  '/ahmad3' => 'page#ahmad3'
+  #match  '/ahmad4' => 'page#ahmad4'
+  #match  '/ahmad6' => 'page#ahmad6'
+  #match  '/ahmad5' => 'page#ahmad5'
+  #match  '/ahmad7' => 'page#ahmad7'
+  #atch "/whatis", :controller => "page", :action => "whatis"
   
   resources :user_steps
-  match '/user_steps/professional' => 'user_steps#professional'
-  match '/user_steps/email' => 'user_steps#email'
-  match '/user_steps/authentication' => 'user_steps#authentication'
-  match '/user_steps/confirm' => 'user_steps#confirm'
-  match '/user_steps/share' => 'user_steps#share'
-  match '/user_steps/add' => 'user_steps#add'
+  get '/user_steps/professional' => 'user_steps#professional'
+  get '/user_steps/email' => 'user_steps#email'
+  get '/user_steps/authentication' => 'user_steps#authentication'
+  get '/user_steps/confirm' => 'user_steps#confirm'
+  get '/user_steps/share' => 'user_steps#share'
+  get '/user_steps/add' => 'user_steps#add'
   
   # get "home/index"
 
@@ -106,7 +106,7 @@ Bootstrap::Application.routes.draw do
 
   root :to => "home#index"
 #  match ':controller(/:action(/:id(.:format)))'
-  match 'home/index' => 'home#index'
+  get 'home/index' => 'home#index'
 
-  match "*any" , :to => "home#index"
+  get "*any" , :to => "home#index"
 end
