@@ -50,7 +50,7 @@ gem 'rails_12factor'
 # end
 gem "devise"#, :git => "https://github.com/plataformatec/devise.git"
 
-#gem "cancan"
+gem "cancan"
 gem "jquery-rails"
 #gem "activeadmin"
 #gem "rspec-rails", ">= 2.0.1", :group => [:development, :test]
