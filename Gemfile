@@ -6,6 +6,7 @@ source 'https://rubygems.org'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 ruby '1.9.3'
+gem 'rails' ,'3.1.1'
 group :development do
 
 gem  'mysql2'
