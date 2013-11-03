@@ -15,7 +15,7 @@ end
 group :production do
 gem 'unicorn'
 gem 'pg'
-gem 'protected_attributes'
+#gem 'protected_attributes'
 end
 gem  'wicked'
 gem  'omniauth-google-oauth2'
