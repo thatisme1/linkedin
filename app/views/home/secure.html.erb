@@ -1,7 +1,26 @@
-
+<%=stylesheet_link_tag ""%>
 <div class="container">
 	<div class="row">
-		<h1>Home#secure</h1>
-		<p>Find me in app/views/home/secure.html.erb</p>
+		<h1> Result </h1>
+
 	</div>
+
 </div>
+
+
+  <%if @user.present?%>
+    <%@users.each do |user|%>
+        <div class="row">
+              <%=user.full_name%>
+              <%=user.email%>
+                <% if curent_user
+              <%=link_to 'create_friendships_path',user %>
+        </div>
+    <%end%>
+
+  <%end%>
+
+
+
+
+

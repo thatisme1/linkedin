@@ -22,6 +22,7 @@ gem  'omniauth-google-oauth2'
 gem 'oa-core'
 gem 'omniauth-facebook'
 gem 'rails_12factor'
+gem 'font-awesome-rails','3.1.1'
 # gem 'rails', '3.2.14'
 # gem install activerecord-mysql2-adapter
 

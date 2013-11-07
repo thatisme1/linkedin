@@ -20,16 +20,10 @@
 
     <!-- Le javascript -->
     <script src="/javascripts/jquery.min.js"></script>
-    <script src="/javascripts/jquery.tablesorter.min.js"></script>
-    <script src="/javascripts/bootstrap-dropdown.js"></script>
-    <script src="/javascripts/jquery.tablesorter.min.js"></script>
-    <script src="/javascripts/application.js"></script>
+    
 
 
-    <!-- Le fav and touch icons -->
-    <link rel="apple-touch-icon" href="/images/ico/bootstrap-apple-57x57.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="/images/ico/bootstrap-apple-72x72.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="/images/ico/bootstrap-apple-114x114.png">
+    
 
 
 
@@ -37,47 +31,13 @@
     <body class="<%= 'background_texture' unless (controller_name=='home' || controller.action_name=='cookiepolicy'||controller_name=='registration')%>" 	  >
 				
 
-    <!-- Topbar ==================================================
-    <div class="topbar" data-dropdown="dropdown">
-      <div class="topbar-inner">
-        <div class="container">
-          <a class="brand" href="/">Parkables</a>
-          <ul class="nav">
-            <li><a href="/">Home</a></li>
-            <li><%= link_to "Secure Page", secure_index_path %></li>
-            <li><%= link_to "Feedback", feedbacks_path %></li>
-            <li><a href="http://twitter.github.com/bootstrap">Bootstrap Docs</a></li>
-            <li><a href="http://twitter.github.com/bootstrap/javascript.html">Bootstrap Js</a></li>
-          </ul>
-          <ul class="nav secondary-nav">
-            <li class="dropdown">
-           		<% if user_signed_in? %>  
-                <a href="#" class="dropdown-toggle"><%= current_user.email %></a>
-          		<% else %>  
-              <a href="#" class="dropdown-toggle">Sign in</a>
-		          <% end %>
-              <ul class="dropdown-menu">
-           			<% if user_signed_in? %>  
-          			<li><%= link_to "Edit profile", '/users/edit' %></li> 
-          			<li><%= link_to "Sign out", destroy_user_session_path %></li> 
-          			<% else %>  
-	          		<li><%= link_to "Sign up", new_user_registration_path %></li>
-                <li class="divider"></li>
-		          	<li><%= link_to "Sign in", new_user_session_path %></li>
-		          	<% end %>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
                                                                    -->
                                                                  
 
     <div id = "header">
       <div class="wrapper" align="center" id="myhead">
 
-        <a href="http://www.linkedin.com/"  id="li-logo">
+        <a href="/"  id="li-logo">
 
         </a>
         <div id="main-nav">
@@ -117,7 +77,7 @@
         <span>	<%=link_to "User Agreement" , useragreement_path %> </span>
         <span>	<%=link_to "Privacy Policy" , privacypolicy_path %></span>
         <span>   	<a href="#">Community Guidelines</a></span>
-        <span>   </span>
+        <span>  <%=link_to "Cookie Policy",cookiepolicy_path %></span>
         <span class ="nav-footer-span-last">    <a href="#">Copyright Policy</a></span>
       </div>
 

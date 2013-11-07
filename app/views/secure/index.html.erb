@@ -1,8 +1,22 @@
-<link href="/stylesheets/docs.css" rel="stylesheet">
-<div class="container">
-	<div class="row">
-		<h1>Secure#index</h1>
-		<p>Find me in app/views/secure/index.html.erb</p>
-	</div>
-</div>
+<div class="main">
+<%if @users.present?%>
+<% @users.each do |user| %>
+    <div >
+      <%=user.name%>
+      <%if user.student.any?%>
+          <span>Student at</span>
+        <%user.student.first.inst_name%>
+      <%end%>
+      <%if user.employment.any?%>
+        <span><%=user.employment.first.title+" at "%></span>
+          <%=user.employment.first.company%>
 
+      <%end%>
+      <%=link_to 'ADD',new_friendship_path(:id=>user)%>
+
+    </div>
+
+
+<%end%>
+<%end%>
+</div>

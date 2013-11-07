@@ -1,26 +1,44 @@
 class FriendshipsController < ApplicationController
-def index
-	@user = User.find(params[:user_id])
-end
+
+  before_filter :authenticate_user!
+
 def show
 	redirect_to user_path(params[:id])
 end
 def new
-	@friendship1 = Friendship.new
+  if params[:id]
+    puts '###########################################'
+  end
+  @friendship=current_user.friendships.new
+  @friendship.friend_id=params[:id]
+  @friendship.status='pending'
+  if @friendship.valid?
+    session[:friend_id]=@friendship.friend_id
+    flash[:message]="Saved"
+    puts session[:friend_id]
+  end
 
 end
+  def index
+    redirect_to root_path
+  end
 def create
-	@friend = User.find(params[:friend_id])
-	params[:friendship1] = {:user_id => @current_user.id, :friend_id => @friend.id, :status => 'requested'}
-	@friendship1 = Friendship.new(params[:friendship1])
 
-	if @friendship1.valid?
-		@friendship1.save
-		redirect_to user_friends_path(current_user)
+  if session[:friend_id].blank?
+    puts' --------------------------------------------------------------'
+
+  end
+  if current_user.connect_with_person(session[:friend_id])
+    session.delete(:friend_id)
+    flash[:notice] = "Added friend."
+		redirect_to secure_index_path
 	else
 		redirect_to user_path(current_user)
-	end
+  end
+  return
+
 end
+
 	def update
 		@fr=Friendship.current_user.find_by_friend_id(params[:id])
 		if @fr

@@ -22,7 +22,9 @@ def isnotsameperson
 end
 
 def user_exists
-	self.errors.add(:friend_id,'Person must exist') unless !User.find(self.friend_id).blank?
+  if User.find_by_id(self.friend_id).blank?
+	  self.errors.add(:friend_id,'Person must exist')
+  end
 end
 
 def accept

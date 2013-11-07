@@ -17,6 +17,10 @@ class HomeController < ApplicationController
   end
 
   def secure
+
+  end
+  def temp
+    render layout:'signedin'
   end
 
 end

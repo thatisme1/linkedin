@@ -15,8 +15,9 @@ Bootstrap::Application.routes.draw do
   #devise_for controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
   #resources :users, :only => [:show]
-  resources :users
+  resources :users do
 
+  end
   get 'users/:id/edit2' => 'users#edit'
   devise_scope :user do match "login" => "registration#step2" end
 
@@ -36,6 +37,7 @@ Bootstrap::Application.routes.draw do
   #match  '/ahmad6' => 'page#ahmad6'
   #match  '/ahmad5' => 'page#ahmad5'
   #match  '/ahmad7' => 'page#ahmad7'
+  match '/temp' =>'home#temp'
   #atch "/whatis", :controller => "page", :action => "whatis"
   
   resources :user_steps
@@ -47,6 +49,7 @@ Bootstrap::Application.routes.draw do
   match '/user_steps/add' => 'user_steps#add'
   
   # get "home/index"
+resources :friendships
 
 
 
@@ -71,7 +74,9 @@ Bootstrap::Application.routes.draw do
   #       post 'toggle'
   #     end
   #
-  #     collection do
+  #     c
+  #
+  # ollection do
   #       get 'sold'
   #     end
   #   end
@@ -107,8 +112,10 @@ Bootstrap::Application.routes.draw do
   # Note: This route will make all actions in every controller accessible via GET requests.
 
   root :to => "home#index"
+
 #  match ':controller(/:action(/:id(.:format)))'
   get 'home/index' => 'home#index'
 
-  get "*any" , :to => "home#index"
+#  get "*any" , :to => "home#index"
 end
+

@@ -13,27 +13,81 @@
 
     <!-- Le styles -->
     <link href="/stylesheets/bootstrap.css" rel="stylesheet">
-    <link href="/stylesheets/docs.css" rel="stylesheet">
-  <%= stylesheet_link_tag "layout.css"%>
+
+  <%= stylesheet_link_tag "signedin.css"%>
 
 
     <!-- Le javascript -->
-    <script src="/javascripts/jquery.min.js"></script>
-    <script src="/javascripts/jquery.tablesorter.min.js"></script>
-    <script src="/javascripts/bootstrap-dropdown.js"></script>
-    <script src="/javascripts/jquery.tablesorter.min.js"></script>
-    <script src="/javascripts/application.js"></script>
+
 
 <body class="background_texture">
+
+
+
 	<div id = "myhead" align="center">
 		<div class = "wrapper">
+            <a href="/" id='li-logo-in'></a>
+                <div id="search">
+                    <div class='global-search-dropdown' >
+                        <label class="dropdown-creator search-all float-left">
+
+                            
+                        </label>
+                    </div>
+
+                  <%=form_tag secure_index_path,:method => 'get'  do %>
+
+                        <%= text_field_tag :search, params[:search], :class=>'float-left', :placeholder=>'Search for People', :id=>''%>
+                        <%= button_tag  '',:name => '',:class=>'search-button float-left' %>
+
+                  <% end %>
+
+                    <!--input type="text" name="search" class="float-left" placeholder="Search for People"/>
+                    <button class="search-button float-left"><span></span></button-->
+                  <%=link_to 'Advanced','advanced_search_path' ,:class=>'float-left header-link'%>
+                </div>
+
+           <ul class="header-nav">
+             <li class="float-left messaging">
+               <div class="activity-drop">
+                 <h3>Messaging</h3>
+
+               </div>
 
 
+             </li>
+             <li class="float-left flag"></li>
+             <div class="activity-drop">
+               <h3>Notifications</h3>
+
+             </div>
+             <li class="float-left connect"></li>
+             <div class="activity-drop">
+               <h3>Invite</h3>
+
+             </div>
+             <li class="float-left profile-pic"></li>
+
+
+
+           </ul>
 		</div>
 	</div>
-
-
+    
+    <div class="wrapper">
+    <%=yield%>
+    </div>
 
 
 
 </body>
+    <script src="/javascripts/jquery.min.js"></script>
+    <script src="/javascripts/bootstrap-dropdown.js"></script>
+    <script >
+
+var originalLeft = parseInt($("#myhead").css('left'));
+$(window).scroll(function(){
+  
+        $('#myhead').css('left', originalLeft - $(this).scrollLeft());
+    });
+</script>

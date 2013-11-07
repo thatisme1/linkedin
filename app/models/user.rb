@@ -90,11 +90,65 @@ end
   end
 
   def name
-    self.fname +' '+self.lname
+   return self.fname+" "+self.lname
   end
 
+  def self.search(search)
+    if search
+      search =search.delete(' ');
+      if Rails.env.production?
+        find(:all, :conditions => ['fname LIKE ? or lname LIKE ? or fname||lname LIKE ?',  "%#{search}%","%#{search}%","%#{search}%"])
+      else
+        find(:all, :conditions => ['fname LIKE ? or lname LIKE ? or concat(fname,lname) LIKE ?', "%#{search}%","%#{search}%","%#{search}%"])
+      end
+
+    else
+      find(:all)
+    end
+  end
+
+  def self.advanced_search(last_name,first_name,company,school,country)
+    @user=[]
+    if(!first_name.blank?)
+      @user+=User.find_by_fname(first_name)
+
+    end
+
+    if(!last_name.blank?)
+      @user+=User.find_by_lname(last_name)
+
+    end
+
+    if (!company.blank?)
+      @user+=User.find(Employment.where('company LIKE?',company).select('user_id'))
 
 
+    end
+    if (!school.blank?)
+      @user+=User.find_by_student(:name=>school)
+    end
 
+
+    if (country)
+      @user+=User.find_by_country_id(:name=>country)
+    end
+
+  end
+
+  def connect_with_person(friend_id)
+
+    @x=self.friendships.build(:friend_id=>friend_id)
+    @x.status='pending'
+    if @x.valid?
+      @x.save
+      true
+    else
+      false
+    end
+  end
+
+  def all_connections
+
+  end
 
 end
