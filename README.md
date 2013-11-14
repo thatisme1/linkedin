@@ -1,7 +1,5 @@
-# Rails Bootstrap Base Application
- 
-## Overview
 
-Web Programming Project
-Using Devise
+
+#Web Programming Project
+#Using Devise
 
