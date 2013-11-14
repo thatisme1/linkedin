@@ -1,0 +1,63 @@
+<%=stylesheet_link_tag 'secure.css'%>
+
+<div class="main">
+
+
+  <% if @users.any?%>
+      <div class="header-title">
+  <h2 class="title">  <%=params[:school]%></h2>
+      </div>
+      <div class="selector">
+      <span>Attended</span>
+      <%=select_year params[:start_date],{:start_year => 2015, :end_year => 1900},{ name:'start_date'}%>
+                                  to
+      <%=select_year params[:end_date], {:start_year => 2015, :end_year => 1900},{name:'end_date'} %>
+      </div>
+
+      <div class=""></div>
+      <div class="results">
+        <h1 class="result_heading"><%=@users.length%> students and alumini found</h1>
+        <%@users.each do |user|%>
+            <div class="alumini_search_result">
+              <div class="search_result">
+
+                <%=link_to user.name,user_path(user.id)%>
+
+
+                <%if user.id==current_user.id%>
+                    <span class="underline">you</span>
+                <%end%>
+
+                <%if user.students.any?%>
+                    <p>
+                      Student at
+                      <%=user.students.first.inst_name%>
+                    </p>
+                <%end%>
+                <%if user.employments.any?%>
+                    <p>
+                      <span><%=user.employments.first.title+" at "%></span>
+                      <%=user.employments.first.company%>
+                    </p>
+                <%end%>
+                <%=user.country.name%>
+              </div>
+              <div class="alumini_bottom">
+              <%if !@current_user.connected_with(user.id) &&user.id!=@current_user.id%>
+
+                  <%=link_to 'CONNECT',new_friendship_path(:id=>user), class:'connect-button search-button' %>
+              <%else%>
+                <span>Already Connected</span>
+
+
+              <%end%>
+              </div>
+            </div>
+
+      <%end%>
+      </div>
+<%end%>
+
+
+
+</div>

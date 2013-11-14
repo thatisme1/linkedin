@@ -1,11 +1,43 @@
-<div class="container">
+<div class="main" xmlns="http://www.w3.org/1999/html">
   <%=form_for @friendship do |f| %>
-        <label>Email</label>
-        <input name ="email"type="text"/>
 
-          <%= f.submit 'Update', :class => ["btn","primary"] %>
+      <h3>How do you know <%=User.find(@friendship.friend_id).name %>?</h3>
+
+      <%if @friendship.errors.any?%>
+        <p><%=@friendship.errors[:relation].first%></p>
+      <%end%>
+
+      <label>
+      <%=radio_button "friendship" ,"relation", "Acquaintance" %>
+          Acquaintance
+      </label>
+
+      <label>
+      <%=radio_button "friendship" ,"relation", "Friend" %>
+          Friend
+      </label>
+      <label>
+      <%=radio_button "friendship","relation","Colleague"%>
+          Colleague
+      </label>
+      <label>
+      <%=radio_button "friendship","relation","Classmate"%>
+          Classmate
+      </label>
+      <label>
+
+      <%=radio_button "friendship","relation","Other"%>
+          Other
+      </label>
+
+        <div class="hidden" id="email-div">
+        <label>Enter Email</label>
+        <input name ="email"type="text"/>
+        </div>
+          <%= f.submit 'Submit', :class => ["btn","primary"] %>
 
   <%end%>
 
 
 </div>
+

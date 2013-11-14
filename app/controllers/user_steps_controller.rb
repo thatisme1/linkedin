@@ -8,7 +8,7 @@ class UserStepsController < ApplicationController
 		@radio = 'seeker'
 		@emp = Employment.new
 		@emp.user_id =@user.id
-
+    @user.country_id=163 if @user.country.nil?
 
 		@email = @user.email
 		@flag=true
@@ -82,7 +82,8 @@ class UserStepsController < ApplicationController
 				return
 			end
 
-		elsif param[:id] =='confirm' 	
+    elsif param[:id] =='confirm'
+
 		end
 
 

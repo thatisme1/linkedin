@@ -13,7 +13,7 @@ height:100%;
 	margin-right:auto;
 	color: #666666;
 	margin-bottom: 10px;
-	height: 290px;
+	height: auto;
 }
 
 #metal-body{
@@ -99,6 +99,10 @@ border-image: none;
 border-width: 0px 1px 1px;
 background: none repeat scroll 0% 0% rgb(219, 240, 249);
 height:85px;
+    overflow: inherit;
+
+    height: auto;
+    padding-bottom: 18px;
 }
 
 #broadcastMessage-Form{

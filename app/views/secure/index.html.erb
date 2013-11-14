@@ -1,22 +1,68 @@
+<%=stylesheet_link_tag 'secure.css'%>
+
+
+
+
 <div class="main">
+
+  <div class="advanced_search">
+    <p>Search</p>
+    <form name="advance_search_form" action="/secure/index" method="get">
+      <label>First Name</label>
+      <input type="text" name="fname"value="<%=params[:fname]%>">
+      <label>Last Name</label>
+      <input type="text" name="lname"value="<%=params[:lname]%>">
+      <label>Company Name</label>
+      <input type="text" name="company"value="<%=params[:company]%>">
+      <label>Institution Name</label>
+      <input type="text" name="school"value="<%=params[:school]%>">
+      <label>Country</label>
+      <%=collection_select nil,:country,Country.all,:id,:name,:include_blank=>true, :selected=>params[:country]%>
+      <input type="submit" name="Adv_Search">
+    </form>
+
+
+
+  </div>
+
+  <div class="middle">
 <%if @users.present?%>
-<% @users.each do |user| %>
-    <div >
-      <%=user.name%>
-      <%if user.student.any?%>
-          <span>Student at</span>
-        <%user.student.first.inst_name%>
-      <%end%>
-      <%if user.employment.any?%>
-        <span><%=user.employment.first.title+" at "%></span>
-          <%=user.employment.first.company%>
+      <p align="center" class="result_count"><%=@users.length%> results found</p>
+        <% @users.each do |user| %>
+            <div>
+        <div class="search_result">
 
-      <%end%>
-      <%=link_to 'ADD',new_friendship_path(:id=>user)%>
-
-    </div>
+              <%=link_to user.name,user_path(user.id)%>
 
 
+              <%if user.id==current_user.id%>
+              <span class="underline">you</span>
+                  <%end%>
+
+           <%if user.students.any?%>
+              <p>
+                 Student at
+                    <%=user.students.first.inst_name%>
+              </p>
+          <%end%>
+          <%if user.employments.any?%>
+              <p>
+            <span><%=user.employments.first.title+" at "%></span>
+              <%=user.employments.first.company%>
+               </p>
+          <%end%>
+        </div>
+          <%if !@current_user.connected_with(user.id) &&user.id!=@current_user.id%>
+
+          <%=link_to 'CONNECT',new_friendship_path(:id=>user), class:'connect-button search-button' %>
+           <%end%>
+          </div>
+
+
+    <%end%>
+        <%else%>
+    <p class="result_count" align="center">No results</p>
 <%end%>
-<%end%>
+
+</div>
 </div>

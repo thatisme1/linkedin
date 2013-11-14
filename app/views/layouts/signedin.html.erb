@@ -12,13 +12,15 @@
     <![endif]-->
 
     <!-- Le styles -->
+<head>
     <link href="/stylesheets/bootstrap.css" rel="stylesheet">
 
   <%= stylesheet_link_tag "signedin.css"%>
 
 
     <!-- Le javascript -->
-
+<%= javascript_include_tag 'application'%>
+</head>
 
 <body class="background_texture">
 
@@ -38,7 +40,9 @@
                   <%=form_tag secure_index_path,:method => 'get'  do %>
 
                         <%= text_field_tag :search, params[:search], :class=>'float-left', :placeholder=>'Search for People', :id=>''%>
-                        <%= button_tag  '',:name => '',:class=>'search-button float-left' %>
+                        <%= button_tag  '',:name => '',:class=>'search-button float-left' do%>
+                      <span></span>
+                      <%end%>
 
                   <% end %>
 
@@ -48,27 +52,41 @@
                 </div>
 
            <ul class="header-nav">
-             <li class="float-left messaging">
-               <div class="activity-drop">
+             <li class="float-left messaging" >
+               <div class="activity-drop hidden"id="messaging">
                  <h3>Messaging</h3>
 
                </div>
 
 
              </li>
-             <li class="float-left flag"></li>
-             <div class="activity-drop">
-               <h3>Notifications</h3>
+             <li class="float-left flag" >
+             <div class="activity-drop hidden"id="notifications">
+
+               <h3>Invitations<%= current_user.requested_friends.length unless current_user.requested_friends.length==0%></h3>
+               <%if current_user.requested_friends.length!=0%>
+                   <%current_user.requested_friends.each do |f|%>
+                       <%=form_for Friendship.find_by_user_id_and_friend_id(current_user.id,f.id) do |x|%>
+                        <%=link_to f.name ,users_path+'/'+(f.id).to_s%>
+                        <%=submit_tag 'Accept'%>
+                        <%=submit_tag 'Ignore'%>
+                           <%end%>
+                   <%end%>
+               <%end%>
 
              </div>
-             <li class="float-left connect"></li>
-             <div class="activity-drop">
+             </li>
+             <li class="float-left connect" >
+             <div class="activity-drop hidden"id="invite">
                <h3>Invite</h3>
 
              </div>
-             <li class="float-left profile-pic"></li>
-
-
+             </li>
+             <li class="float-left profile-pic">
+             <div class="activity-drop hidden">
+               <%=link_to 'Sign out',destroy_user_session_path%>
+             </div>
+             </li>
 
            </ul>
 		</div>
@@ -90,4 +108,22 @@ $(window).scroll(function(){
   
         $('#myhead').css('left', originalLeft - $(this).scrollLeft());
     });
+$('.header-nav li').hover(function(){$('.header-nav li').children().hide();$(this).children().show();});
+$('body').click(function(){$('.header-nav li').children().hide()});
+$('.header-nav li').click(function(){event.stopPropagation()})
+
+
+
+$(document).ready(
+        $("input[name='friendship[relation]']:radio").change(function(){
+            if($(this).val()=='Other')
+            {
+                $('#email-div').show();
+            }
+            else $('#email-div').hide();
+        })
+)
 </script>
+
+
+

@@ -7,6 +7,7 @@ Bootstrap::Application.routes.draw do
   #devise_for :admin_users, ActiveAdmin::Devise.config
 
   get "secure/index"
+  get "secure/alumini"
 
   get "home/index"
 #devise_for :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
@@ -115,6 +116,8 @@ resources :friendships
 
 #  match ':controller(/:action(/:id(.:format)))'
   get 'home/index' => 'home#index'
+
+
 
 #  get "*any" , :to => "home#index"
 end

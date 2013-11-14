@@ -15,8 +15,9 @@
       <%= @user.lname %>
     </p>
 
-
+    <%if @user.id==current_user.id%>
     <%= link_to 'Edit', edit_user_path(@user) %> |
+        <%end%>
     <%= link_to 'Back', users_path %>
   </div>
 </div>

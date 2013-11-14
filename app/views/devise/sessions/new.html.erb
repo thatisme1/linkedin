@@ -4,42 +4,42 @@
 	<div class="row">
 		<h2>Sign in</h2>
 		
-		<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+		<%#= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 
 		<fieldset>
 		  <div class="clearfix">
-			  <%= f.label :email %>
+			  <%#= f.label :email %>
 			  <div class="input">
-			  	<%= f.email_field :email %>
+			  	<%#= f.email_field :email %>
 			  </div>
 		  </div>
 
 		  <div class="clearfix">
-			  <%= f.label :password %>
+			  <%#= f.label :password %>
 			  <div class="input">
-				  <%= f.password_field :password %>
+				  <%#= f.password_field :password %>
 			  </div>
 		  </div>
 		  
 		  <div class="clearfix">
 			  <div class="input">
-			  	<%= f.submit "Sign in", :class => "btn large primary" %>
+			  	<%#= f.submit "Sign in", :class => "btn large primary" %>
 			  </div>
 		  </div>
 
-		  <% if devise_mapping.rememberable? -%>
+		  <%# if devise_mapping.rememberable? -%>
 		  	<div class="clearfix">
 				<label>&nbsp;</label>
 			    <div class="input">
-			    	<%= f.check_box :remember_me %>
+			    	<%#= f.check_box :remember_me %>
 			    	<span>Remember me</span> | 
 			    	<span><a href="/users/password/new">Forgot your password?</a></span>
 			    </div>
 		    </div>
-		  <% end -%>
+		  <%# end -%>
 
 		</fieldset>
-		<% end %>
+		<%# end %>
 
 		</div>
 	</div>
@@ -57,10 +57,22 @@
   </div>
   <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
   <ul>
-
-    <li><%= f.label :email %>
+    <% if !flash[:alert].blank? %>
+        <li class="signin-error">
+        <% if flash[:alert][/The email address and password you entered do not match our records/] %>
+            <div class="flashNotice col last">
+              <%= t('devise.failure.not_found_in_database', resource_name: "#{params[:user][:email]}").html_safe %>
+            </div>
+        <% else %>
+            <!-- Style for any warning message -->
+            <div class="flashNotice col last"><%= flash[:alert]%></div>
+        <% end %>
+        </li>
+    <% end %>
+    <li><%= f.label :email%>
       <div class="text ">
-        <%= f.email_field :email %>
+
+        <%= f.email_field :email, :id=>'email' %>
       </div>
     </li>
 
@@ -90,3 +102,8 @@
 
 </div>
 </div>
+<script>
+
+      $('#email').focus();
+
+</script>

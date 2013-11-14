@@ -1,0 +1,97 @@
+<%= javascript_include_tag "application" %>
+
+<%=csrf_meta_tag%>
+<div class="main">
+<%if @friends.any?%>
+    <h1>Connections</h1>
+    <div>
+
+        <%@friends.each do |user| %>
+          <div>
+                <%=link_to user.name , user_path(user)%>
+                  <div>
+                      <%if user.employments.any?%>
+                         <%=user.employments.first.title + ' at '%>
+                         <%=user.employments.first.company%>
+                      <%end%>
+
+                  </div>
+                  <div>
+                    <%if user.students.any?%>
+                        <%='Student at '%>
+                        <%=user.students.first.inst_name%>
+                    <%end%>
+                  </div>
+         </div>
+      <p>
+
+        <%=link_to 'Disconnect',friendships_path(:friend_id=>user),:method => :delete ,:confirm => 'abc'%>
+      </p>
+<%end%>
+
+</div>
+    <%end%>
+
+
+
+
+<%if @requests.any?%>
+    <h1>Requests</h1>
+    <div>
+        <%@requests.each do |user| %>
+              <div>
+                     <%=link_to user.name , user_path(user)%>
+                     <div>
+                         <%if user.employments.any?%>
+                              <%=user.employments.first.title + ' at '%>
+                                <%=user.employments.first.company%>
+                         <%end%>
+
+                    </div>
+                    <div>
+                      <%if user.students.any?%>
+                          <%='Student at '%>
+                          <%=user.students.first.inst_name%>
+                      <%end%>
+                    </div>
+          </div>
+          <p>
+
+            <%=link_to 'Disconnect',friendships_path+'/'+(user.id).to_s,method:  :delete %>
+          </p>
+      <%end%>
+
+    </div>
+
+
+<%end%>
+
+
+<%if @pending.any?%>
+    <h1>Pending</h1>
+<div>
+  <%@pending.each do |user| %>
+      <div>
+        <%=link_to user.name , user_path(user)%>
+        <div>
+          <%if user.employments.any?%>
+              <%=user.employments.first.title + ' at '%>
+              <%=user.employments.first.company%>
+          <%end%>
+
+        </div>
+        <div>
+          <%if user.students.any?%>
+              <%='Student at '%>
+              <%=user.students.first.inst_name%>
+          <%end%>
+        </div>
+      </div>
+      <p>
+        <%=link_to 'Disconnect',friendships_path+'/'+(user.id).to_s,method:  :delete %>
+      </p>
+  <%end%>
+
+</div>
+<%end%>
+</div>

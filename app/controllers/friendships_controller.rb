@@ -1,7 +1,7 @@
 class FriendshipsController < ApplicationController
 
   before_filter :authenticate_user!
-
+  layout 'signedin'
 def show
 	redirect_to user_path(params[:id])
 end
@@ -12,49 +12,65 @@ def new
   @friendship=current_user.friendships.new
   @friendship.friend_id=params[:id]
   @friendship.status='pending'
+  @friendship.relation='Other'
   if @friendship.valid?
     session[:friend_id]=@friendship.friend_id
-    flash[:message]="Saved"
+
     puts session[:friend_id]
+    @friendship.relation=''
+    respond_to do |format|
+      format.html
+      format.json {render :json => @friendship}
+
+    end
   end
 
 end
   def index
-    redirect_to root_path
+    @friends=current_user.friends
+    @pending =current_user.pending_friends
+    @requests = current_user.requested_friends
   end
 def create
+  puts'bdbdhwamdsbamdhbwmhbadmshudhwiajdij#############################'
 
   if session[:friend_id].blank?
     puts' --------------------------------------------------------------'
 
   end
-  if current_user.connect_with_person(session[:friend_id])
-    session.delete(:friend_id)
+  friend_id=session[:friend_id]
+  session.delete(:friend_id)
+  @friendship=current_user.connect_with_person(friend_id,params[:friendship][:relation])
+
+  if @friendship.valid?
+
+    @friendship.save
     flash[:notice] = "Added friend."
+
 		redirect_to secure_index_path
-	else
-		redirect_to user_path(current_user)
+  else
+    session[:friend_id]=friend_id
+		render 'new'
+    return
   end
   return
 
 end
 
 	def update
-		@fr=Friendship.current_user.find_by_friend_id(params[:id])
-		if @fr
+    puts '-------------------------------------------------------------------------------------------------'
+    puts params
+		@fr=Friendship.find(params[:id])
+		if !@fr.nil? && @fr.user_id==current_user.id
+      if params[:commit]=='Accept'
 			@fr.accept_request
-		end
+      else
+        @fr.ignore
+        end
+    end
 
-		# @user = User.find(current_user)
-		# @friend = User.find(params[:id])
-		# params[:friendship1] = {:user_id => @user.id, :friend_id => @friend.id, :status => 'accepted'}
-		# @friendship1 = Friendship.find_by_user_id_and_friend_id(@user.id, @friend.id)
-		# if @friendship1.update_attributes(params[:friendship1]) && @friendship2.update_attributes(params[:friendship2])
-		# 	flash[:notice] = 'Friend sucessfully accepted!'
-		# 	redirect_to user_friends_path(current_user)
-		# else
-		# 	redirect_to user_path(current_user)
-		# end
+    redirect_to friendships_path
+
 	end
 
 	def ignore
@@ -64,8 +80,9 @@ end
 	end
 
 	def destroy
-		@user = User.find(params[:user_id])
-		@friendship1 = @user.friendships.find_by_friend_id(params[:id]).destroy
-		redirect_to user_friends_path(:user_id => current_user)
+    puts 'Destroy'
+    @f=Friendship.find_by_user_id_and_friend_id(current_user.id,params[:id])
+    @f.disconnect
+    redirect_to friendships_path
 	end
 end
